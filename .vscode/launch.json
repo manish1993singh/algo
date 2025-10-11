@@ -1,0 +1,217 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Stack_",
+      "request": "launch",
+      "mainClass": "java_basics.Stack_",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "TreeSet_",
+      "request": "launch",
+      "mainClass": "java_basics.TreeSet_",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "TreeMap_",
+      "request": "launch",
+      "mainClass": "java_basics.TreeMap_",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Tree_",
+      "request": "launch",
+      "mainClass": "java_basics.Tree_",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Queue_",
+      "request": "launch",
+      "mainClass": "java_basics.Queue_",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Knapsack01",
+      "request": "launch",
+      "mainClass": "dynamic_programming.bottom_up.Knapsack01",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Fib",
+      "request": "launch",
+      "mainClass": "dynamic_programming.top_down.Fib",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Fib",
+      "request": "launch",
+      "mainClass": "dynamic_programming.bottom_up.Fib",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "ThreeSumClosest",
+      "request": "launch",
+      "mainClass": "two_pointer.ThreeSumClosest",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Longest_Consecutive_Sequence",
+      "request": "launch",
+      "mainClass": "hash_map.Longest_Consecutive_Sequence",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sub_Array_Sum_Equals_K",
+      "request": "launch",
+      "mainClass": "hash_map.Sub_Array_Sum_Equals_K",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Group_Anagram",
+      "request": "launch",
+      "mainClass": "hash_map.Group_Anagram",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Two_Sum",
+      "request": "launch",
+      "mainClass": "hash_map.Two_Sum",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "TrappingRainWater",
+      "request": "launch",
+      "mainClass": "moving_window.TrappingRainWater",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "ContainerWithMaxWater",
+      "request": "launch",
+      "mainClass": "moving_window.ContainerWithMaxWater",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Binary_Linkedlist",
+      "request": "launch",
+      "mainClass": "Binary_Linkedlist",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Binary_search_value_range",
+      "request": "launch",
+      "mainClass": "Binary_search_value_range",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "LInkedlist_Intersection",
+      "request": "launch",
+      "mainClass": "LInkedlist_Intersection",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Lexicographical_Rank",
+      "request": "launch",
+      "mainClass": "Lexicographical_Rank",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "LinkedList_Pelindrom",
+      "request": "launch",
+      "mainClass": "LinkedList_Pelindrom",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Stack_Absolute_Path",
+      "request": "launch",
+      "mainClass": "Stack_Absolute_Path",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Stack_Redundent_bracket",
+      "request": "launch",
+      "mainClass": "Stack_Redundent_bracket",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Stack_String_Reverse",
+      "request": "launch",
+      "mainClass": "Stack_String_Reverse",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Stack_bracket",
+      "request": "launch",
+      "mainClass": "Stack_bracket",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_In_Range",
+      "request": "launch",
+      "mainClass": "Sum_In_Range",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Data_type",
+      "request": "launch",
+      "mainClass": "java_basics.Data_type",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Longest_SubString",
+      "request": "launch",
+      "mainClass": "moving_window.Longest_SubString",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "MaxSubArrayOfSizeK",
+      "request": "launch",
+      "mainClass": "moving_window.MaxSubArrayOfSizeK",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "MinWindowSubString",
+      "request": "launch",
+      "mainClass": "moving_window.MinWindowSubString",
+      "projectName": "java_algo_2211f406"
+    }
+  ]
+}
