@@ -1,3 +1,4 @@
+package dfs_algo;
 // Question 2: Find All Paths Between Two Nodes using DFS
 // Given a graph and two nodes, print all possible paths between them using DFS.
 // Sample Input:
@@ -25,6 +26,65 @@
 // - Use a List to track the current path.
 // - Use a Set to track visited nodes.
 // - Backtrack properly to explore all paths.
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+class Node {
+    int data;
+    List<Node> neighbors;
+
+    Node(int item){
+        data = item;
+        neighbors = new ArrayList<>();
+    }
+}
+
 public class DFS_AllPaths {
-    // Implement here
+    public List<List<Integer>> allPaths(Node start, Node end){
+        List<List<Integer>> result = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
+        List<Integer> currentPath = new ArrayList<>();
+        traverse(start, end, visited, currentPath, result);
+        return result;
+    }
+
+    private void traverse(Node currentNode, Node endNode, Set<Node> visited, List<Integer> currentPath, List<List<Integer>> result ){
+        visited.add(currentNode);
+        currentPath.add(currentNode.data);
+        
+        if(currentNode == endNode){
+            result.add(new ArrayList<>(currentPath));
+        }else{
+            for(Node neighbor: currentNode.neighbors){
+                if(!visited.contains(neighbor)){
+                    traverse(neighbor, endNode, visited, currentPath, result);
+                }
+            }
+        }
+
+        currentPath.remove(currentPath.size() - 1);
+        visited.remove(currentNode);
+    }
+
+    public static void main(String[] args){
+        Node node0 = new Node(0);
+        Node node1 = new Node(1);
+        Node node2 = new Node( 2);
+        Node node3 = new Node(3);
+
+        node0.neighbors.add(node1);
+        node0.neighbors.add(node2);
+        node1.neighbors.add(node3);
+        node2.neighbors.add(node3);
+
+        DFS_AllPaths dfs_AllPaths = new DFS_AllPaths();
+
+        List<List<Integer>> result = dfs_AllPaths.allPaths(node0, node3);
+
+        System.out.println(result);
+
+    }
 }

@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DFS_PathExists",
+      "request": "launch",
+      "mainClass": "dfs_algo.DFS_PathExists",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "DFS_AllPaths",
+      "request": "launch",
+      "mainClass": "dfs_algo.DFS_AllPaths",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "BFS_ShortestPathInGraph",
       "request": "launch",
       "mainClass": "bfs_algo.BFS_ShortestPathInGraph",
