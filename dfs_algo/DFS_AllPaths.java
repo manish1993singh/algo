@@ -54,19 +54,24 @@ public class DFS_AllPaths {
     private void traverse(Node currentNode, Node endNode, Set<Node> visited, List<Integer> currentPath, List<List<Integer>> result ){
         visited.add(currentNode);
         currentPath.add(currentNode.data);
+        System.out.println("DFS visiting: " + currentNode.data + ", currentPath: " + currentPath);
         
         if(currentNode == endNode){
+            System.out.println("Reached end node " + endNode.data + ", path found: " + currentPath);
             result.add(new ArrayList<>(currentPath));
         }else{
             for(Node neighbor: currentNode.neighbors){
                 if(!visited.contains(neighbor)){
+                    System.out.println("Exploring neighbor " + neighbor.data + " from node " + currentNode.data);
                     traverse(neighbor, endNode, visited, currentPath, result);
                 }
             }
         }
 
+        System.out.println("Backtracking from node " + currentNode.data + ", currentPath before removal: " + currentPath);
         currentPath.remove(currentPath.size() - 1);
         visited.remove(currentNode);
+        System.out.println("Backtracked to path: " + currentPath);
     }
 
     public static void main(String[] args){
