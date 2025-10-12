@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BFS_ShortestPathInGraph",
+      "request": "launch",
+      "mainClass": "bfs_algo.BFS_ShortestPathInGraph",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "BFS_LevelOrderTraversalBinaryTree",
+      "request": "launch",
+      "mainClass": "bfs_algo.BFS_LevelOrderTraversalBinaryTree",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "BFS_LevelOrderTraversal",
+      "request": "launch",
+      "mainClass": "bfs_algo.BFS_LevelOrderTraversal",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Stack_",
       "request": "launch",
       "mainClass": "java_basics.Stack_",

@@ -1,3 +1,4 @@
+package bfs_algo;
 // Question 2: Level Order Traversal of a Graph using BFS
 // Given a graph and a starting node, print nodes level by level (distance from start).
 // Sample Input:
@@ -25,6 +26,76 @@
 // - Use a Queue for BFS traversal.
 // - Use a Set to track visited nodes.
 // - Use a List of Lists to store nodes at each level.
+
+import java.util.Queue;
+
+// Node class for graph representation
+class Node {
+    int data;
+    Node[] neighbors;
+
+    Node(int item, int size) {
+        data = item;
+        neighbors = new Node[size];
+    }
+}
+
 public class BFS_LevelOrderTraversal {
-    // Implement here
+
+    public void levelOrderTraversal(Node start) {
+        if (start == null) return;
+
+        Queue<Node> queue = new java.util.LinkedList<>();
+        java.util.Set<Node> visited = new java.util.HashSet<>();
+        java.util.List<java.util.List<Integer>> result = new java.util.ArrayList<>();
+
+        queue.add(start);
+        visited.add(start);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            java.util.List<Integer> currentLevel = new java.util.ArrayList<>();
+
+            for (int i = 0; i < levelSize; i++) {
+                Node currentNode = queue.poll();
+                currentLevel.add(currentNode.data);
+
+                for (Node neighbor : currentNode.neighbors) {
+                    if (neighbor != null && !visited.contains(neighbor)) {
+                        visited.add(neighbor);
+                        queue.add(neighbor);
+                    }
+                }
+            }
+            result.add(currentLevel);
+        }
+
+        // Print the result
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println("Level " + i + ": " + result.get(i));
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example graph as a social network (users 0-4)
+        BFS_LevelOrderTraversal graphExample = new BFS_LevelOrderTraversal();
+        Node node0 = new Node(0, 5);
+        Node node1 = new Node(1, 5);
+        Node node2 = new Node(2, 5);
+        Node node3 = new Node(3, 5);
+        Node node4 = new Node(4, 5);
+
+        // Manually creating edges
+        node0.neighbors[1] = node1;
+        node0.neighbors[2] = node2;
+        node1.neighbors[0] = node0;
+        node1.neighbors[3] = node3;
+        node2.neighbors[0] = node0;
+        node2.neighbors[4] = node4;
+        node3.neighbors[1] = node1;
+        node4.neighbors[2] = node2;
+
+        System.out.println("Level Order Traversal starting from Node 0:");
+        graphExample.levelOrderTraversal(node0);
+    }
 }
