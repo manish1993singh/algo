@@ -29,54 +29,70 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// Standard Node class for graph representation
 class Node {
     int data;
     List<Node> neighbors;
 
-    public Node(int data){
+    public Node(int data) {
         this.data = data;
-        neighbors = new ArrayList<Node>();
+        this.neighbors = new ArrayList<>();
     }
-    
 }
 
 public class DFS_PathExists {
-    public boolean pathExist(Node startNode, Node endNode){
+    /**
+     * Checks if a path exists between startNode and endNode using DFS.
+     * @param startNode The starting node.
+     * @param endNode The destination node.
+     * @return true if a path exists, false otherwise.
+     */
+    public boolean pathExists(Node startNode, Node endNode) {
         Set<Node> visited = new HashSet<>();
-        return traverse(startNode, endNode, visited);
+        return dfs(startNode, endNode, visited);
     }
 
-    public boolean traverse(Node currentNode, Node endNode, Set<Node> visited){
+    /**
+     * Recursive DFS traversal to check for path existence.
+     */
+    private boolean dfs(Node currentNode, Node endNode, Set<Node> visited) {
         visited.add(currentNode);
-        if(currentNode == endNode){
+        if (currentNode == endNode) {
             return true;
-        }else{
-            for(Node neighbor: currentNode.neighbors){
-                if(!visited.contains(neighbor)){
-                    if(traverse(neighbor, endNode, visited)){
-                        return true;
-                    };
+        }
+        for (Node neighbor : currentNode.neighbors) {
+            if (!visited.contains(neighbor)) {
+                if (dfs(neighbor, endNode, visited)) {
+                    return true;
                 }
             }
         }
         return false;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        // Example graph construction
         Node node0 = new Node(0);
         Node node1 = new Node(1);
         Node node2 = new Node(2);
         Node node3 = new Node(3);
         Node node4 = new Node(4);
-        Node node5 = new Node(5);
+        Node node5 = new Node(5); // Disconnected node
+
         node0.neighbors.add(node1);
         node0.neighbors.add(node2);
         node1.neighbors.add(node3);
         node1.neighbors.add(node2);
         node2.neighbors.add(node4);
 
-        boolean result = new DFS_PathExists().pathExist(node0, node5);
-        System.out.println("Does path exists? Answer: "+result);
-    }
+        DFS_PathExists dfsChecker = new DFS_PathExists();
 
+        // Test: Path exists (should be true)
+        boolean result1 = dfsChecker.pathExists(node0, node4);
+        System.out.println("Does path exist from 0 to 4? " + result1);
+
+        // Test: Path does NOT exist (should be false)
+        boolean result2 = dfsChecker.pathExists(node0, node5);
+        System.out.println("Does path exist from 0 to 5? " + result2);
+    }
 }
