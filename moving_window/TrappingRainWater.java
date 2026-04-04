@@ -34,3 +34,17 @@ public class TrappingRainWater {
     }
     
 }
+
+
+//Trapped water problem is solved with srinking window pattern
+//If one side is bigger than the other side, keep adding the water block by block.
+//To calculate exactly how much water can be there in each block, block it self will be substracted with the leftmost block height or right most block's height.
+//At the end total will be the amount of water that can be stored.
+//example 1:
+//|    |
+//|| |||
+
+
+//example 2:
+//   | |
+//|| | |

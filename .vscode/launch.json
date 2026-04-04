@@ -6,6 +6,104 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Next_hot_day",
+      "request": "launch",
+      "mainClass": "Monotonic_stack.Next_hot_day",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Rob_next",
+      "request": "launch",
+      "mainClass": "dynamic_programming.Rob_next",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Koko_min_banana_per_hour",
+      "request": "launch",
+      "mainClass": "Binary_Search.Koko_min_banana_per_hour",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_x_equal_min_len_sub_array",
+      "request": "launch",
+      "mainClass": "prefix_sum.Sum_x_equal_min_len_sub_array",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_x_equal_sub_array",
+      "request": "launch",
+      "mainClass": "prefix_sum.Sum_x_equal_sub_array",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "X_greator_or_equal",
+      "request": "launch",
+      "mainClass": "prefix_sum.X_greator_or_equal",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "MaxProductSubarray",
+      "request": "launch",
+      "mainClass": "Kadane.MaxProductSubarray",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sub_array_k_element",
+      "request": "launch",
+      "mainClass": "moving_window.Sub_array_k_element",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Max_k_size_window",
+      "request": "launch",
+      "mainClass": "moving_window.Max_k_size_window",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "PerfectSquare",
+      "request": "launch",
+      "mainClass": "Binary_Search.PerfectSquare",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Two_number_sum_target_un_sorted_array",
+      "request": "launch",
+      "mainClass": "hash_map.Two_number_sum_target_un_sorted_array",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Kadane",
+      "request": "launch",
+      "mainClass": "Kadane.Kadane",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "MinHeap",
+      "request": "launch",
+      "mainClass": "heap.MinHeap",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Backtracking_Permutations",
+      "request": "launch",
+      "mainClass": "backtracking_algo.Backtracking_Permutations",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "DFS_PathExists",
       "request": "launch",
       "mainClass": "dfs_algo.DFS_PathExists",

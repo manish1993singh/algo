@@ -44,3 +44,10 @@ public class MaxSubArrayOfSizeK {
         System.out.println("Maximum sum of a subarray of size " + k + " is: " + maxSumSubarray(arr, k));
     }
 }
+
+
+//Maximum sum of sub array problem is solved with moving two pointers window.
+//For the given array and the window size, first total sum is generated.
+//Then the window moves one index at at time towards right edge.
+//It recomputes the total
+//It compares and picks the maxmum.

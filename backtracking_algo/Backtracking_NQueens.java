@@ -1,3 +1,4 @@
+package backtracking_algo;
 // Question 1: N-Queens Problem
 // Place N queens on an N x N chessboard so that no two queens threaten each other.
 // Sample Input:

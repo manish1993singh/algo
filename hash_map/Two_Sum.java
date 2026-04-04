@@ -39,3 +39,9 @@ public class Two_Sum {
     }
     
 }
+
+
+//Using this hash map pattern finding the two numbers indicies which will add to give the target number is effecient solution.
+//During the iterations, numbers keep getting added in the map along with its index.
+//Also during the iterations, current number will be substracted from the target.
+//If the remainder is found in the map, algorithm will output the indexes

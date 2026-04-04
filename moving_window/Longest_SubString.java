@@ -28,3 +28,15 @@ public class Longest_SubString {
         System.out.println("Length of longest substring without repeating characters: " + lengthOfLongestSubstring(input));
     }
 }
+
+
+//longest substing without repeating character is solved with left to right shrinking and growing window pattern.
+//It maintains the map of char and the index it appeard.
+//It maintains two pointers left and right.
+//right keeps moving in a loop, while left waits till a duplicate char is encoutered which is between left and right pointers.
+//window keeps growing
+//In case of duplicate char, the left is shifted after the char.
+//That way the window has srunked to expell the duplicate char it had earliear found.
+//It injects the char with its new index.
+//It keeps computing the max length with right - left in each loop
+//It compares it with previously found max length and picks the max among those.
