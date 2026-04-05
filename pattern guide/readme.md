@@ -1245,3 +1245,451 @@ Cycles Fast/Slow Pointer
 Combinations Backtracking
 Top K Heap
 Ranges Interval Merge
+
+---
+
+✅ Problem 1 — Graph Traversal (BFS)
+
+1. Problem
+
+Number of Islands
+
+You are given a 2D grid of '1' (land) and '0' (water). Count how many islands exist.
+
+👉 An island is formed by connected land (horizontal/vertical).
+
+2. Input
+   grid = [
+   ["1","1","0","0"],
+   ["1","1","0","0"],
+   ["0","0","1","0"],
+   ["0","0","0","1"]
+   ]
+3. Output
+   3
+4. Deep Breakdown
+   a. Problem Signals
+   Grid
+   Connected components
+   Count groups
+   b. Constraints
+   Visiting all cells → O(m \* n) expected
+   c. Brute Force
+   Try grouping manually → redundant traversal
+   d. Theoretical Insight
+
+This is a graph problem disguised as a grid.
+
+Each cell = node
+Adjacent cells = edges
+
+Invariant:
+
+Once visited, a node should not be revisited
+
+Why BFS/DFS works:
+
+It explores all connected nodes → forms one island
+e. Trick
+Avoid counting same island multiple times
+f. Trigger
+
+“Grid + connected components → BFS/DFS”
+
+5.  Pattern
+    ✅ Graph Traversal (BFS/DFS)
+6.  Thought Process
+    Iterate grid
+    If land → run BFS → mark visited
+7.  Code (BFS)
+    public int numIslands(char[][] grid) {
+    int count = 0;
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    bfs(grid, i, j);
+                    count++;
+                }
+            }
+        }
+        return count;
+
+    }
+
+private void bfs(char[][] grid, int i, int j) {
+Queue<int[]> q = new LinkedList<>();
+q.offer(new int[]{i, j});
+grid[i][j] = '0';
+
+    int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
+
+    while (!q.isEmpty()) {
+        int[] cell = q.poll();
+
+        for (int[] d : dirs) {
+            int ni = cell[0] + d[0];
+            int nj = cell[1] + d[1];
+
+            if (ni >= 0 && nj >= 0 && ni < grid.length && nj < grid[0].length && grid[ni][nj] == '1') {
+                q.offer(new int[]{ni, nj});
+                grid[ni][nj] = '0';
+            }
+        }
+    }
+
+} 8. Edge Cases
+Empty grid
+All water
+Single island 9. Mental Trigger
+
+👉 “Grid + connected regions → BFS/DFS”
+
+✅ Problem 2 — Topological Sort
+
+1. Problem
+
+Course Schedule
+
+Given prerequisites, determine if you can finish all courses.
+
+2. Input
+   numCourses = 2
+   prerequisites = [[1,0]]
+3. Output
+   true
+4. Deep Breakdown
+   a. Signals
+   Dependencies
+   Ordering
+   b. Theory
+
+This is a Directed Graph with dependency edges.
+
+Key:
+
+If cycle exists → impossible
+
+Topological sort:
+
+Process nodes with indegree = 0
+
+Invariant:
+
+If all nodes processed → no cycle
+
+c. Trick
+Detect cycle using ordering
+d. Trigger
+
+“Dependencies + ordering → Topological Sort”
+
+5.  Pattern
+    ✅ Topological Sort (Kahn’s Algorithm)
+6.  Thought Process
+    Build graph
+    Track indegree
+    Process queue
+7.  Code
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    List<List<Integer>> graph = new ArrayList<>();
+    int[] indegree = new int[numCourses];
+
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int[] p : prerequisites) {
+            graph.get(p[1]).add(p[0]);
+            indegree[p[0]]++;
+        }
+
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) q.offer(i);
+        }
+
+        int count = 0;
+
+        while (!q.isEmpty()) {
+            int course = q.poll();
+            count++;
+
+            for (int next : graph.get(course)) {
+                if (--indegree[next] == 0) {
+                    q.offer(next);
+                }
+            }
+        }
+
+        return count == numCourses;
+
+    }
+
+8.  Edge Cases
+    No prerequisites
+    Cycle present
+9.  Mental Trigger
+
+👉 “Dependency graph + cycle detection → Topological Sort”
+
+✅ Problem 3 — Union Find (Disjoint Set)
+
+1. Problem
+
+Number of Provinces
+
+Count number of connected components in a graph.
+
+2. Input
+   isConnected = [
+   [1,1,0],
+   [1,1,0],
+   [0,0,1]
+   ]
+3. Output
+   2
+4. Deep Breakdown
+   a. Signals
+   Connectivity
+   Grouping
+   b. Theory
+
+Union-Find maintains:
+
+Parent array
+Find root
+Union sets
+
+Invariant:
+
+Nodes with same root belong to same component
+
+Optimizations:
+
+Path compression
+Union by rank
+c. Trick
+Faster than DFS in repeated union queries
+d. Trigger
+
+“Dynamic connectivity → Union Find”
+
+5.  Pattern
+    ✅ Union Find
+6.  Thought Process
+    Union connected nodes
+    Count unique parents
+7.  Code
+    class UnionFind {
+    int[] parent;
+
+        UnionFind(int n) {
+            parent = new int[n];
+            for (int i = 0; i < n; i++) parent[i] = i;
+        }
+
+        int find(int x) {
+            if (parent[x] != x) {
+                parent[x] = find(parent[x]);
+            }
+            return parent[x];
+        }
+
+        void union(int a, int b) {
+            int rootA = find(a);
+            int rootB = find(b);
+            if (rootA != rootB) parent[rootA] = rootB;
+        }
+
+    }
+
+public int findCircleNum(int[][] isConnected) {
+int n = isConnected.length;
+UnionFind uf = new UnionFind(n);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (isConnected[i][j] == 1) {
+                uf.union(i, j);
+            }
+        }
+    }
+
+    Set<Integer> set = new HashSet<>();
+    for (int i = 0; i < n; i++) {
+        set.add(uf.find(i));
+    }
+
+    return set.size();
+
+} 8. Edge Cases
+Fully connected
+Fully disconnected 9. Mental Trigger
+
+👉 “Connectivity + merging sets → Union Find”
+
+✅ Problem 4 — Trie
+
+1. Problem
+
+Implement Trie
+
+Design a Trie with insert, search, and prefix search.
+
+2. Input
+   insert("apple")
+   search("apple") → true
+   startsWith("app") → true
+3. Output
+
+As above
+
+4. Deep Breakdown
+   a. Signals
+   Prefix matching
+   String dictionary
+   b. Theory
+
+Trie is a prefix tree.
+
+Invariant:
+
+Path from root represents prefix
+
+Operations:
+
+Insert → build path
+Search → traverse path
+c. Trick
+Faster than repeated string comparison
+d. Trigger
+
+“Prefix-based search → Trie”
+
+5. Pattern
+   ✅ Trie
+6. Thought Process
+   Each node stores children
+   Mark word end
+7. Code
+   class TrieNode {
+   TrieNode[] children = new TrieNode[26];
+   boolean isEnd;
+   }
+
+class Trie {
+TrieNode root = new TrieNode();
+
+    public void insert(String word) {
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            if (node.children[c - 'a'] == null) {
+                node.children[c - 'a'] = new TrieNode();
+            }
+            node = node.children[c - 'a'];
+        }
+        node.isEnd = true;
+    }
+
+    public boolean search(String word) {
+        TrieNode node = traverse(word);
+        return node != null && node.isEnd;
+    }
+
+    public boolean startsWith(String prefix) {
+        return traverse(prefix) != null;
+    }
+
+    private TrieNode traverse(String s) {
+        TrieNode node = root;
+        for (char c : s.toCharArray()) {
+            if (node.children[c - 'a'] == null) return null;
+            node = node.children[c - 'a'];
+        }
+        return node;
+    }
+
+} 8. Edge Cases
+Empty string
+Prefix but not full word 9. Mental Trigger
+
+👉 “Prefix search → Trie”
+
+✅ Problem 5 — Bit Manipulation
+
+1. Problem
+
+Single Number
+
+Every number appears twice except one. Find it.
+
+2. Input
+   nums = [4,1,2,1,2]
+3. Output
+   4
+4. Deep Breakdown
+   a. Signals
+   Numbers appear twice
+   Find unique
+   b. Theory
+
+XOR properties:
+
+a ^ a = 0
+a ^ 0 = a
+XOR is commutative
+
+So:
+
+a ^ a ^ b = b
+c. Trick
+Avoid hashmap
+d. Trigger
+
+“Pairs cancel out → XOR”
+
+5.  Pattern
+    ✅ Bit Manipulation
+6.  Thought Process
+    XOR all elements
+7.  Code
+    public int singleNumber(int[] nums) {
+    int result = 0;
+
+        for (int num : nums) {
+            result ^= num;
+        }
+
+        return result;
+
+    }
+
+8.  Edge Cases
+    Single element
+    Negative numbers
+9.  Mental Trigger
+
+👉 “Duplicates cancel → XOR”
+
+🔥 Final Pattern Coverage (15 Core Patterns)
+
+You now have a solid interview-ready base:
+
+Core Layer (First 10)
+Sliding Window
+Prefix Sum
+Binary Search
+DP
+Greedy
+Two Pointers
+Fast/Slow
+Backtracking
+Heap
+Interval
+Advanced Common Layer (Now Added)
+Graph Traversal
+Topological Sort
+Union Find
+Trie
+Bit Manipulation

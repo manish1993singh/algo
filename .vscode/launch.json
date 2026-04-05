@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Trie",
+      "request": "launch",
+      "mainClass": "prefix_tree.Trie",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Course_completion_ex",
+      "request": "launch",
+      "mainClass": "bfs_algo.Course_completion_ex",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Course_completion",
+      "request": "launch",
+      "mainClass": "bfs_algo.Course_completion",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Islend_count",
+      "request": "launch",
+      "mainClass": "bfs_algo.Islend_count",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Islend_count",
+      "request": "launch",
+      "mainClass": "dfs_algo.Islend_count",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "K_largest",
       "request": "launch",
       "mainClass": "priority_queue.K_largest",
