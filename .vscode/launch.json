@@ -6,6 +6,76 @@
   "configurations": [
     {
       "type": "java",
+      "name": "K_largest",
+      "request": "launch",
+      "mainClass": "priority_queue.K_largest",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Array_subsets",
+      "request": "launch",
+      "mainClass": "backtracking_algo.Array_subsets",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "CascadingSubsets",
+      "request": "launch",
+      "mainClass": "CascadingSubsets",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Cycle_in_linked_list",
+      "request": "launch",
+      "mainClass": "fast_slow_pointer.Cycle_in_linked_list",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Max_water_container",
+      "request": "launch",
+      "mainClass": "two_pointers.Max_water_container",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Gas_station",
+      "request": "launch",
+      "mainClass": "Greedy.Gas_station",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Stair_climbing",
+      "request": "launch",
+      "mainClass": "dynamic_programming.Stair_climbing",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_x_greator_or_equal",
+      "request": "launch",
+      "mainClass": "prefix_sum.Sum_x_greator_or_equal",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_x_equal_count",
+      "request": "launch",
+      "mainClass": "prefix_sum.Sum_x_equal_count",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Far_jump",
+      "request": "launch",
+      "mainClass": "Greedy.Far_jump",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Next_hot_day",
       "request": "launch",
       "mainClass": "Monotonic_stack.Next_hot_day",

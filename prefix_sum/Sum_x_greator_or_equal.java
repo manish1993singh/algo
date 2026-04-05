@@ -21,6 +21,7 @@ public class Sum_x_greator_or_equal {
 
             int insertPos = findFirstGreatestOrEqual(sortedPrefixList, prefixSum);
             sortedPrefixList.add(insertPos, prefixSum);
+            System.out.println(sortedPrefixList);
         }
 
         return count;

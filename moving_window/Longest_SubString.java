@@ -24,7 +24,7 @@ public class Longest_SubString {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string:");
         String input = sc.nextLine();
-        String s = "abcabcbb";
+        String s = "abacacbcbb";
         System.out.println("Length of longest substring without repeating characters: " + lengthOfLongestSubstring(input));
     }
 }
