@@ -20,12 +20,12 @@ public class Kadane {
         int[] intput1 = new int[]{1, 2, 3, -1};
         int[] input2 = new int[]{-1, -2, -3, -4};
         int[] input3 = new int[]{-1, 2, 3, -4};
-        int[] input4 = new int[]{-1, 2, 3, -4, 5, 6, -7, 8, 9};
+        int[] input4 = new int[]{-1, 2, 3, -3, 1, 6, -7, 1, 2};
 
         Kadane kadane = new Kadane();
-        System.out.println(kadane.maxOfArray(intput1));
-        System.out.println(kadane.maxOfArray(input2));
-        System.out.println(kadane.maxOfArray(input3));
+        // System.out.println(kadane.maxOfArray(intput1));
+        // System.out.println(kadane.maxOfArray(input2));
+        // System.out.println(kadane.maxOfArray(input3));
         System.out.println(kadane.maxOfArray(input4));
 
 

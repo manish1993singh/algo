@@ -6,6 +6,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TaskMaxTime",
+      "request": "launch",
+      "mainClass": "task_schedular.TaskMaxTime",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "TaskMaxTime",
+      "request": "launch",
+      "mainClass": "TaskMaxTime",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Word_search",
+      "request": "launch",
+      "mainClass": "backtracking_algo.Word_search",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "K_most_frequent",
+      "request": "launch",
+      "mainClass": "priority_queue.K_most_frequent",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Find_all_combination_equal_k",
+      "request": "launch",
+      "mainClass": "backtracking_algo.Find_all_combination_equal_k",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Rotated_binary_search",
+      "request": "launch",
+      "mainClass": "Binary_Search.Rotated_binary_search",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Trie",
       "request": "launch",
       "mainClass": "prefix_tree.Trie",
