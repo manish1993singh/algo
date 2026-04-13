@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Sum_multiple_k",
+      "request": "launch",
+      "mainClass": "prefix_sum.Sum_multiple_k",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "TaskMaxTime",
       "request": "launch",
       "mainClass": "task_schedular.TaskMaxTime",
