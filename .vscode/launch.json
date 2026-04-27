@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Remainder_K",
+      "request": "launch",
+      "mainClass": "prefix_sum.Remainder_K",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "PalindromePartitioning",
+      "request": "launch",
+      "mainClass": "backtracking_algo.PalindromePartitioning",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Max_length_sub_sequence",
+      "request": "launch",
+      "mainClass": "dynamic_programming.Max_length_sub_sequence",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Sum_multiple_k",
       "request": "launch",
       "mainClass": "prefix_sum.Sum_multiple_k",
