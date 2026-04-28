@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Array_split",
+      "request": "launch",
+      "mainClass": "Binary_Search.Array_split",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Next_greator",
+      "request": "launch",
+      "mainClass": "Monotonic_stack.Next_greator",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Remainder_K",
       "request": "launch",
       "mainClass": "prefix_sum.Remainder_K",
