@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Max_in_each_window",
+      "request": "launch",
+      "mainClass": "Monotonic_stack.Max_in_each_window",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Array_split",
       "request": "launch",
       "mainClass": "Binary_Search.Array_split",
