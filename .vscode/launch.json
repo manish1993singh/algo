@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Median_in_stream",
+      "request": "launch",
+      "mainClass": "heap.Median_in_stream",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Split_array_equal_sum",
+      "request": "launch",
+      "mainClass": "dynamic_programming.Split_array_equal_sum",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Merge_Interval",
+      "request": "launch",
+      "mainClass": "merge_interval.Merge_Interval",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Sum_min_all_subarray",
+      "request": "launch",
+      "mainClass": "Monotonic_stack.Sum_min_all_subarray",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Max_in_each_window",
       "request": "launch",
       "mainClass": "Monotonic_stack.Max_in_each_window",
