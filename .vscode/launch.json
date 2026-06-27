@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "K_smallest",
+      "request": "launch",
+      "mainClass": "priority_queue.K_smallest",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "Test",
+      "projectName": "java_algo_2211f406"
+    },
+    {
+      "type": "java",
       "name": "Median_in_stream",
       "request": "launch",
       "mainClass": "heap.Median_in_stream",
