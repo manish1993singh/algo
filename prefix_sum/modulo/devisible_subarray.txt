@@ -1,0 +1,29 @@
+## Problem 5: Divisible Subarray Count
+Difficulty: Medium
+Pattern 5: Prefix Sum + Modulo
+Problem Statement:
+You are given an integer array nums and an integer k.
+Return the total number of non-empty contiguous subarrays that have a sum divisible by k.
+Example 1:
+
+* Input: nums = [4, 5, 0, -2, -3, 1], k = 5
+* Output: 7
+* Explanation: There are 7 subarrays with a sum divisible by k = 5:
+* [4, 5, 0, -2, -3, 1] sums to 5
+   * [5] sums to 5
+   * [5, 0] sums to 5
+   * [0] sums to 0
+   * [0, -2, -3] sums to -5
+   * [-2, -3] sums to -5
+   * [5, 0, -2, -3] sums to 0
+
+Example 2:
+
+* Input: nums = [5], k = 9
+* Output: 0
+
+Constraints:
+
+* 1 <= nums.length <= 3 * 10⁴
+* -10⁴ <= nums[i] <= 10⁴
+* 2 <= k <= 10⁴

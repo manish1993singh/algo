@@ -19,6 +19,15 @@
       "projectName": "java_algo_2211f406"
     },
     {
+      "type": "debugpy",
+      "name": "Python: Current File",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
       "type": "java",
       "name": "Median_in_stream",
       "request": "launch",
@@ -479,12 +488,6 @@
       "request": "launch",
       "mainClass": "moving_window.ContainerWithMaxWater",
       "projectName": "java_algo_2211f406"
-    },
-    {
-      "type": "java",
-      "name": "Current File",
-      "request": "launch",
-      "mainClass": "${file}"
     },
     {
       "type": "java",

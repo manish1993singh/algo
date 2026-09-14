@@ -1,0 +1,24 @@
+## Problem 3: Range Extraction Query
+Difficulty: Easy
+Pattern 3: Prefix Sum
+Problem Statement:
+You are managing a data pipeline that logs the number of server requests processed every second. You are given a 0-indexed integer array requests, where requests[i] represents the number of requests at the i-th second.
+You need to handle multiple queries. Each query is represented as a pair of integers [left, right]. For each query, calculate the total number of requests processed between the left and right seconds, inclusive.
+Implement a class/system to optimize this so that each range query can be answered in O(1) time after preprocessing.
+Example 1:
+
+* Input:
+* requests = [5, 2, 8, 1, 9]
+   * queries = [[1, 3], [0, 4], [2, 2]]
+* Output: [11, 25, 8]
+* Explanation:
+* Query [1, 3]: requests[1] + requests[2] + requests[3] = 2 + 8 + 1 = 11
+   * Query [0, 4]: 5 + 2 + 8 + 1 + 9 = 25
+   * Query [2, 2]: requests[2] = 8
+
+Constraints:
+
+* 1 <= requests.length <= 10⁵
+* 0 <= requests[i] <= 10³
+* 1 <= queries.length <= 10⁵
+* 0 <= left <= right < requests.length

@@ -1,0 +1,56 @@
+**Problem Statement: The Staircase Climb**
+
+A runner is standing at the bottom of a staircase with $n$ steps. From any given step, the runner can take either $1$ step or $2$ steps upward.
+
+Determine the total number of distinct ways the runner can reach the top of the staircase (step $n$).
+
+---
+
+**Input Format**
+
+* The first line contains an integer $t$, representing the number of test cases.
+* Each of the next $t$ lines contains a single integer $n$, representing the total number of steps in the staircase for that test case.
+
+---
+
+**Constraints**
+
+* $1 \le t \le 100$
+* $1 \le n \le 45$
+
+---
+
+**Output Format**
+
+* For each test case, print a single integer representing the total number of distinct ways to reach the $n$-th step on a new line.
+
+---
+
+**Sample Input 0**
+
+```text
+2
+2
+3
+
+```
+
+**Sample Output 0**
+
+```text
+2
+3
+
+```
+
+**Explanation 0**
+
+* **For $n = 2$:** There are two distinct ways to reach the 2nd step:
+1. $1 \text{ step} + 1 \text{ step}$
+2. $2 \text{ steps}$
+
+
+* **For $n = 3$:** There are three distinct ways to reach the 3rd step:
+1. $1 \text{ step} + 1 \text{ step} + 1 \text{ step}$
+2. $1 \text{ step} + 2 \text{ steps}$
+3. $2 \text{ steps} + 1 \text{ step}$

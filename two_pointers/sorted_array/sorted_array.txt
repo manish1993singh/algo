@@ -1,0 +1,65 @@
+Your solution works correctly for small inputs, but it has a performance bottleneck that will cause a Time Limit Exceeded (TLE) on LeetCode.
+## 🔍 The Efficiency Issue
+Your current solution uses nested loops: a for loop to iterate through each booking, and an inner for loop to iterate across the range of flights.
+
+* In the worst-case scenario, every booking covers all n flights.
+* If you have B bookings and n flights, the time complexity becomes $O(B \times n)$.
+* Given the constraints where both B and n can be up to 2 × 10⁴, the total operations could reach 4 × 10⁸, which is too slow for the standard 1-second execution limit.
+
+## 💡 The Difference Array Trick
+The core idea of a Difference Array is to log only the changes (the boundaries) in O(1) time, and then compute the final prefix sum at the very end in O(n) time. Instead of updating every single element in the range [start, end]:
+
+   1. Add the seats to the start position.
+   2. Subtract the seats from the end + 1 position (to cancel out the effect after the range expires).
+
+## 🚀 Optimized O(n + B) Solution
+
+def find_seat_opt(arr, n):
+    # Create a difference array of size n + 1 to handle end + 1 boundary safely
+    diff = [0] * (n + 1)
+    
+    for start, end, seats in arr:
+        # Convert 1-based indexing to 0-based indexing
+        diff[start - 1] += seats
+        diff[end] -= seats
+        
+    # Reconstruct the original array by running a prefix sum
+    result = []
+    current_seats = 0
+    for i in range(n):
+        current_seats += diff[i]
+        result.append(current_seats)
+        
+    return result
+
+This reduces the total operations from 400 million down to just around 40,000!
+------------------------------
+## Problem 8: Two Sum II - Input Array Is Sorted
+Difficulty: Medium
+Pattern 8: Two Pointers — Opposite Direction
+Problem Statement:
+Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
+Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.
+The tests are generated such that there is exactly one solution. You may not use the same element twice. Your solution must use only O(1) extra space.
+Example 1:
+
+* Input: numbers = [2, 7, 11, 15], target = 9
+* Output: [1, 2]
+* Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+
+Example 2:
+
+* Input: numbers = [2, 3, 4], target = 6
+* Output: [1, 3]
+
+Constraints:
+
+* 2 <= numbers.length <= 3 * 10⁴
+* -1000 <= numbers[i] <= 1000
+* numbers is sorted in non-decreasing order.
+* -1000 <= target <= 1000
+
+------------------------------
+Reply with your code/solution when you are ready, or say "next" to jump to the next pattern!
+Would you like to write the two-pointer solution for this, or should we advance to Pattern 9: Two Pointers — Same Direction?
+

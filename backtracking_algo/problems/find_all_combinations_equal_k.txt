@@ -1,0 +1,72 @@
+**Problem Statement: Unique Combination Sum (Without Duplicates)**
+
+**Description**
+Given an array of distinct integers `list` and a target integer `target`, return a list of all unique combinations of numbers in `list` where the chosen numbers sum to `target`.
+
+Each number in `list` may only be used **at most once** in a combination. The order of numbers within a combination does not matter, but combinations containing the same set of numbers in a different order are considered duplicates and should not be repeated in the output.
+
+---
+
+**Input Format**
+
+* The first line contains an integer $N$, representing the size of the array.
+* The second line contains $N$ space-separated distinct integers representing the elements of `list`.
+* The third line contains a single integer representing `target`.
+
+---
+
+**Constraints**
+
+* $1 \le N \le 30$
+* $1 \le \text{list}[i] \le 100$
+* All elements in `list` are distinct.
+* $1 \le \text{target} \le 1000$
+
+---
+
+**Output Format**
+
+* Print each valid combination on a new line, with numbers separated by spaces.
+* If no valid combination exists, print `-1`.
+
+---
+
+**Sample Input 0**
+
+```text
+4
+10 1 2 7
+8
+
+```
+
+**Sample Output 0**
+
+```text
+10 1
+1 2 7
+
+```
+
+*(Note: The actual exact sequence output depends on the input order passed to the backtracking loop).*
+
+---
+
+**Sample Input 1**
+
+```text
+3
+2 3 5
+1
+
+```
+
+**Sample Output 1**
+
+```text
+-1
+
+```
+
+**Explanation 1**
+No combination of elements from `[2, 3, 5]` can sum to `1`, as all elements are greater than the target.

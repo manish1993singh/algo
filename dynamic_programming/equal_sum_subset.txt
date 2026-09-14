@@ -1,0 +1,75 @@
+**Problem Name**: Partition Array Into Two Equal Sum Subsets
+
+**Problem Description**:
+Given an array `arr` of $N$ non-negative integers, determine whether it can be partitioned into two non-empty subsets, $S_1$ and $S_2$, such that the sum of elements in $S_1$ equals the sum of elements in $S_2$. Every element of the array must belong to exactly one of the two subsets.
+
+---
+
+**Input Format**:
+
+* The first line contains an integer $N$, representing the number of elements in the array.
+* The second line contains $N$ space-separated integers representing the elements of the array `arr`.
+
+---
+
+**Constraints**:
+
+* $1 \le N \le 100$
+* $1 \le arr[i] \le 100$
+* $1 \le \sum arr[i] \le 10000$
+
+---
+
+**Output Format**:
+
+* Print `YES` if the array can be partitioned into two subsets of equal sum, otherwise print `NO`.
+
+---
+
+**Sample Input 0**:
+
+```text
+4
+1 5 11 5
+
+```
+
+**Sample Output 0**:
+
+```text
+YES
+
+```
+
+**Explanation**:
+validation: Sum of array elements is $1 + 5 + 11 + 5 = 22$. Target subset sum is $22 / 2 = 11$. The array can be partitioned into $\{1, 5, 5\}$ and $\{11\}$, both having a sum of 11.
+
+---
+
+**Sample Input 1**:
+
+```text
+4
+1 2 3 5
+
+```
+
+**Sample Output 1**:
+
+```text
+NO
+
+```
+
+**Explanation**:
+Total sum is 11, which is odd. It is impossible to split an odd total sum into two equal integer halves.
+
+---
+
+**Dynamic Programming Approach**:
+
+1. If the total sum of elements is odd, return `NO`.
+2. Set target sum $T = \text{total\_sum} / 2$.
+3. Define a 1D boolean DP array `dp` of size $T + 1$, where `dp[j]` represents whether a subset sum of $j$ is possible. Initialize `dp[0] = True` and all other entries to `False`.
+4. Iterate over each number `num` in `arr`, updating `dp[j] = dp[j] or dp[j - num]` backwards from $T$ down to `num`.
+5. The answer is `YES` if `dp[T]` is `True`, otherwise `NO`.

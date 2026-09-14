@@ -1,0 +1,34 @@
+## Problem 11: Merge Sorted Service Logs
+Difficulty: Easy
+Pattern 11: Dummy Node
+Problem Statement:
+You are combining two sorted error log streams from two different servers. Each stream is represented as a singly linked list where each node contains an integer timestamp sorted in non-decreasing order.
+Merge the two streams into one sorted linked list. The list should be made by splicing together the nodes of the first two lists in-place (without allocating entirely new nodes). Return the head of the merged linked list.
+ListNode Definition (for reference):
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+Example 1:
+
+* Input: list1 = 1 -> 2 -> 4, list2 = 1 -> 3 -> 4
+* Output: 1 -> 1 -> 2 -> 3 -> 4 -> 4
+
+Example 2:
+
+* Input: list1 = [], list2 = []
+* Output: []
+
+Example 3:
+
+* Input: list1 = [], list2 = 0
+* Output: 0
+
+Constraints:
+
+* The number of nodes in both lists is in the range [0, 50].
+* -100 <= ListNode.val <= 100
+* Both list1 and list2 are sorted in non-decreasing order.
+

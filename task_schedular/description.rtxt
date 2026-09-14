@@ -1,0 +1,91 @@
+================================================================================
+PROBLEM STATEMENT: TASK SCHEDULER
+================================================================================
+
+You are given an array of CPU tasks represented by uppercase English letters 
+('A' through 'Z'), where each letter denotes a distinct task type. Tasks can 
+be completed in any order, and each task unit takes 1 unit of time to complete. 
+In each interval of time, the CPU can either execute one task or remain idle.
+
+However, there is a non-negative integer n that represents the cooldown period 
+between two identical tasks. That is, there must be at least n units of time 
+between any two occurrences of the same task.
+
+Return the minimum units of time required by the CPU to complete all given tasks.
+
+--------------------------------------------------------------------------------
+FUNCTION DESCRIPTION
+--------------------------------------------------------------------------------
+
+Complete the function `getScheduled`.
+
+Parameters:
+  - tasks: An array of characters representing the CPU tasks.
+  - n: An integer representing the cooldown period required between 
+       identical tasks.
+
+Returns:
+  - An integer representing the minimum total units of time required.
+
+--------------------------------------------------------------------------------
+INPUT / OUTPUT FORMAT
+--------------------------------------------------------------------------------
+
+Input Format:
+  - An array of characters `tasks` and an integer `n`.
+
+Output Format:
+  - Return a single integer representing the total execution time (including 
+    idle slots).
+
+--------------------------------------------------------------------------------
+EXAMPLES
+--------------------------------------------------------------------------------
+
+Example 1:
+  Input:  tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2
+  Output: 8
+  Explanation: 
+    A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
+    Total units of time = 8.
+
+Example 2:
+  Input:  tasks = ['A', 'C', 'A', 'B', 'D', 'B'], n = 1
+  Output: 6
+  Explanation: 
+    A possible sequence is: A -> B -> C -> D -> A -> B.
+    No idle time is needed because n = 1 and there are enough distinct tasks.
+
+Example 3:
+  Input:  tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 0
+  Output: 6
+  Explanation: 
+    Since n = 0, tasks can run continuously without any idle time.
+
+--------------------------------------------------------------------------------
+CONSTRAINTS
+--------------------------------------------------------------------------------
+
+  - 1 <= tasks.length <= 10^4
+  - tasks[i] is an uppercase English letter ('A' - 'Z')
+  - 0 <= n <= 100
+
+--------------------------------------------------------------------------------
+ALGORITHM & COMPLEXITY
+--------------------------------------------------------------------------------
+
+Approach: Greedy / Frequency Counting
+  1. Count the frequency of each task using a fixed-size array of size 26.
+  2. Find the maximum task frequency `f` (the task that appears most often).
+  3. Count how many distinct tasks have this maximum frequency `m`.
+  4. The minimum time required to schedule the highest frequency tasks with 
+     cooldown slots is given by:
+     `calculatedTime = (f - 1) * (n + 1) + m`
+  5. The final result is `max(tasks.length, calculatedTime)` to account for 
+     cases where the total number of tasks exceeds the required idle slots.
+
+Complexity:
+  - Time Complexity:  O(N) where N is the total number of tasks (sorting a 
+                      26-element array takes constant O(1) time).
+  - Space Complexity: O(1) auxiliary space (uses a fixed-size array of 26).
+================================================================================

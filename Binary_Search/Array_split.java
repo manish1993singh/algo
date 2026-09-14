@@ -77,6 +77,6 @@ public class Array_split {
 
     public static void main(String[] args){
         // Example: Split [7,2,5,10,8] into 2 subarrays with minimum maximum sum
-        System.out.println(getSplit(new int[]{7,2,5,10,8}, 2));
+        System.out.println(getSplit(new int[]{7,2,5,10,8}, 3));
     }
 }

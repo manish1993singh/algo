@@ -1,0 +1,11 @@
+& is AND
+| is OR 
+^ is XOR
+~ is NOT 
+<< is LEFT SHIFT
+>> is RIGHT SHIFT
+
+set bit at index k: num | (1 << K)
+clear bit at index k: num & ~(1 << k)
+toggle bit at inde k: num ^ (1 << k)
+chek bit at index k: bool(num & (num - 1))

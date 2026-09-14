@@ -1,0 +1,46 @@
+**Problem Statement: Longest Increasing Subsequence**
+
+Given an array of $n$ integers, find the length of the longest strictly increasing subsequence. 
+A subsequence is a sequence that can be derived from an array by deleting some or 
+no elements without changing the order of the remaining elements.
+
+---
+
+**Input Format**
+
+* The first line contains an integer $n$, representing the size of the array.
+* The second line contains $n$ space-separated integers, representing the elements of the array $A$.
+
+---
+
+**Constraints**
+
+* $1 \le n \le 10^5$
+* $-10^9 \le A[i] \le 10^9$
+
+---
+
+**Output Format**
+
+* Print a single integer denoting the maximum length of a strictly increasing subsequence.
+
+---
+
+**Sample Input 0**
+
+```text
+6
+10 9 2 5 3 7 101 18
+
+```
+
+**Sample Output 0**
+
+```text
+4
+
+```
+
+**Explanation 0**
+
+The longest strictly increasing subsequence is `[2, 3, 7, 101]`, which has a length of $4$.

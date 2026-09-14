@@ -1,0 +1,80 @@
+================================================================================
+PROBLEM STATEMENT: CONTAINER WITH MOST WATER
+================================================================================
+
+You are given an array of non-negative integers representing heights of 
+vertical lines drawn on a 2D plane. Each element at index i represents a 
+vertical line of height height[i] with endpoints at (i, 0) and (i, height[i]).
+
+Find two lines that, together with the x-axis, form a container such that 
+the container contains the most water.
+
+Return the maximum area of water the container can store.
+
+Note: You may not slant the container.
+
+--------------------------------------------------------------------------------
+FUNCTION DESCRIPTION
+--------------------------------------------------------------------------------
+
+Complete the function `getMaxCapicityContainer`.
+
+Parameters:
+  - space (or height): An array/list of integers representing line heights.
+
+Returns:
+  - An integer representing the maximum capacity (area) of water.
+
+--------------------------------------------------------------------------------
+INPUT / OUTPUT FORMAT
+--------------------------------------------------------------------------------
+
+Input Format:
+  - An array of integers.
+
+Output Format:
+  - Return a single integer representing the maximum capacity.
+
+--------------------------------------------------------------------------------
+EXAMPLES
+--------------------------------------------------------------------------------
+
+Example 1:
+  Input:  space = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+  Output: 49
+  Explanation: 
+    The maximum area is obtained between index 1 (height 8) and index 8 
+    (height 7). 
+    - Width  = 8 - 1 = 7
+    - Height = min(8, 7) = 7
+    - Area   = 7 * 7 = 49
+
+Example 2:
+  Input:  space = [1, 1]
+  Output: 1
+
+--------------------------------------------------------------------------------
+CONSTRAINTS
+--------------------------------------------------------------------------------
+
+  - 2 <= space.length <= 10^5
+  - 0 <= space[i] <= 10^4
+
+--------------------------------------------------------------------------------
+ALGORITHM & COMPLEXITY
+--------------------------------------------------------------------------------
+
+Approach: Two-Pointer Technique
+  1. Initialize two pointers: left = 0, right = space.length - 1.
+  2. Maintain a variable `maxCapacity` to store the maximum area found.
+  3. While left < right:
+     - Calculate capacity = min(space[left], space[right]) * (right - left).
+     - Update maxCapacity = max(maxCapacity, capacity).
+     - Advance the pointer pointing to the shorter line (since moving the 
+       taller line could never produce a larger area with a smaller width).
+  4. Return maxCapacity.
+
+Complexity:
+  - Time Complexity:  O(n)
+  - Space Complexity: O(1)
+================================================================================

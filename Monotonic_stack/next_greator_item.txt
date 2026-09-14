@@ -1,0 +1,99 @@
+================================================================================
+PROBLEM STATEMENT: NEXT GREATER ELEMENT
+================================================================================
+
+Given an array `arr` of $n$ integers, for each element in the array, find the 
+first greater element that appears to its right. 
+
+If no greater element exists to the right of an element, output `-1` for that position.
+
+--------------------------------------------------------------------------------
+FUNCTION DESCRIPTION
+--------------------------------------------------------------------------------
+
+Complete the function `findNextGreat` (or `nextGreaterElement`).
+
+Parameters:
+  - list / arr: An array or list of integers.
+
+Returns:
+  - An array or list of integers where each element at index i represents the 
+    next greater element to the right of `arr[i]`, or `-1` if none exists.
+
+--------------------------------------------------------------------------------
+INPUT / OUTPUT FORMAT
+--------------------------------------------------------------------------------
+
+Input Format:
+  - The first line contains an integer $n$, representing the total number of elements.
+  - The second line contains $n$ space-separated integers representing the array.
+
+Output Format:
+  - Print $n$ space-separated integers representing the next greater element for 
+    each array element.
+
+--------------------------------------------------------------------------------
+EXAMPLES
+--------------------------------------------------------------------------------
+
+Example 1:
+  Input:
+    4
+    4 5 2 25
+
+  Output:
+    5 25 25 -1
+
+  Explanation: 
+    - For 4, the next greater element to the right is 5.
+    - For 5, the next greater element to the right is 25.
+    - For 2, the next greater element to the right is 25.
+    - For 25, there are no elements to the right, so output -1.
+
+Example 2:
+  Input:
+    4
+    13 7 6 12
+
+  Output:
+    -1 12 12 -1
+
+  Explanation:
+    - For 13, no element to the right is greater -> -1.
+    - For 7, the next greater element to the right is 12.
+    - For 6, the next greater element to the right is 12.
+    - For 12, no element to the right is greater -> -1.
+
+Example 3:
+  Input:
+    4
+    1 2 3 4
+
+  Output:
+    2 3 4 -1
+
+--------------------------------------------------------------------------------
+CONSTRAINTS
+--------------------------------------------------------------------------------
+
+  - 1 <= n <= 10^5
+  - -10^9 <= arr[i] <= 10^9
+
+--------------------------------------------------------------------------------
+ALGORITHM & COMPLEXITY
+--------------------------------------------------------------------------------
+
+Approach: Monotonic Stack (Traversing Right to Left)
+  1. Initialize an array `result` of size $n$ and an empty stack `stack`.
+  2. Iterate through the array backwards from index `n - 1` down to `0`:
+     - While `stack` is not empty and `stack.peek() <= arr[i]`:
+         - Pop elements from the stack (they are smaller or equal, so they 
+           can never be the next greater element for elements further left).
+     - Set `result[i]` to `stack.peek()` if the stack is non-empty, else `-1`.
+     - Push `arr[i]` onto the stack.
+  3. Return `result`.
+
+Complexity:
+  - Time Complexity:  O(N), as each element is pushed and popped at most once.
+  - Space Complexity: O(N) auxiliary space for the monotonic stack.
+================================================================================

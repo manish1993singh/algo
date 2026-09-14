@@ -1,0 +1,100 @@
+================================================================================
+PROBLEM STATEMENT: DAILY TEMPERATURES
+================================================================================
+
+Given an array of integers `temperatures` representing the daily temperatures, 
+return an array `result` such that `result[i]` is the number of days you have to 
+wait after the $i$-th day to get a warmer temperature. 
+
+If there is no future day for which this is possible, keep `result[i] == 0` instead.
+
+--------------------------------------------------------------------------------
+FUNCTION DESCRIPTION
+--------------------------------------------------------------------------------
+
+Complete the function `getNextHotDay` (or `dailyTemperatures`).
+
+Parameters:
+  - temperatures: An array/list of integers representing daily temperatures.
+
+Returns:
+  - An array/list of integers where each element at index i represents the number 
+    of days to wait until a warmer temperature occurs.
+
+--------------------------------------------------------------------------------
+INPUT / OUTPUT FORMAT
+--------------------------------------------------------------------------------
+
+Input Format:
+  - The first line contains an integer $n$, representing the total number of days.
+  - The second line contains $n$ space-separated integers representing `temperatures`.
+
+Output Format:
+  - Print $n$ space-separated integers representing the number of days to wait for 
+    a warmer temperature for each day.
+
+--------------------------------------------------------------------------------
+EXAMPLES
+--------------------------------------------------------------------------------
+
+Example 1:
+  Input:
+    8
+    73 74 75 71 69 72 76 73
+
+  Output:
+    1 1 4 2 1 1 0 0
+
+  Explanation: 
+    - Day 0 (73): Warmer day is Day 1 (74) -> Wait 1 - 0 = 1 day.
+    - Day 1 (74): Warmer day is Day 2 (75) -> Wait 2 - 1 = 1 day.
+    - Day 2 (75): Warmer day is Day 6 (76) -> Wait 6 - 2 = 4 days.
+    - Day 3 (71): Warmer day is Day 5 (72) -> Wait 5 - 3 = 2 days.
+    - Day 4 (69): Warmer day is Day 5 (72) -> Wait 5 - 4 = 1 day.
+    - Day 5 (72): Warmer day is Day 6 (76) -> Wait 6 - 5 = 1 day.
+    - Day 6 (76): No future warmer day -> 0 days.
+    - Day 7 (73): No future warmer day -> 0 days.
+
+Example 2:
+  Input:
+    4
+    30 40 50 60
+
+  Output:
+    1 1 1 0
+
+Example 3:
+  Input:
+    3
+    30 30 30
+
+  Output:
+    0 0 0
+
+--------------------------------------------------------------------------------
+CONSTRAINTS
+--------------------------------------------------------------------------------
+
+  - 1 <= n <= 10^5
+  - 30 <= temperatures[i] <= 100
+
+--------------------------------------------------------------------------------
+ALGORITHM & COMPLEXITY
+--------------------------------------------------------------------------------
+
+Approach: Monotonic Stack (Decreasing Stack)
+  1. Initialize an array `result` of size $n$ filled with 0s.
+  2. Maintain a stack `monotonicStack` to store indices of the array.
+  3. Iterate through `temperatures` using index `i` from `0` to `n - 1`:
+     - While the stack is not empty AND `temperatures[i]` is strictly greater 
+       than the temperature at index `monotonicStack.peek()`:
+         - Pop index `lastTemperatureIndex` from the stack.
+         - Calculate distance: `result[lastTemperatureIndex] = i - lastTemperatureIndex`.
+     - Push current index `i` onto the stack.
+  4. Return `result`.
+
+Complexity:
+  - Time Complexity:  O(N), as each element is pushed and popped from the stack at 
+                      most once.
+  - Space Complexity: O(N) auxiliary space for the stack.
+================================================================================

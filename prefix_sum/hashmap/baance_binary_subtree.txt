@@ -1,0 +1,22 @@
+## Problem 4: Balanced Binary Subarray
+Difficulty: Medium
+Pattern 4: Prefix Sum + HashMap
+Problem Statement:
+You are analyzing a binary data stream consisting only of 0s and 1s. You are given an integer array nums.
+Find the maximum length of a contiguous subarray that contains an equal number of 0s and 1s.
+Example 1:
+
+* Input: nums = [0, 1]
+* Output: 2
+* Explanation: [0, 1] is the longest contiguous subarray with an equal number of 0s and 1s.
+
+Example 2:
+
+* Input: nums = [0, 1, 0]
+* Output: 2
+* Explanation: Either [0, 1] or [1, 0] is a valid subarray with a maximum length of 2.
+
+Constraints:
+
+* 1 <= nums.length <= 5 * 10⁴
+* nums[i] is either 0 or 1.

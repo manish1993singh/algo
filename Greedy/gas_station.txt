@@ -1,0 +1,68 @@
+**Problem Statement: Gas Station Circuit**
+
+**Description**
+There are $N$ gas stations along a circular route, numbered from $0$ to $N - 1$.
+
+You are given two integer arrays, $gas$ and $cost$:
+
+* $gas[i]$ represents the amount of gas available at the $i$-th station.
+* $cost[i]$ represents the amount of gas required to travel from the $i$-th station to the next station $(i + 1)$. The last station $(N - 1)$ connects back to the first station ($0$).
+
+You have a car with an unlimited gas tank, and you begin the journey with an empty tank ($0$ gas) at one of the gas stations.
+
+Determine the starting gas station's index if you can travel around the circuit once in the clockwise direction without running out of gas. If it is impossible to complete the circuit, return `-1`. If there exists a solution, it is guaranteed to be unique.
+
+---
+
+**Input Format**
+
+* The first line contains an integer $N$, the total number of gas stations.
+* The second line contains $N$ space-separated integers representing the array $gas$.
+* The third line contains $N$ space-separated integers representing the array $cost$.
+
+---
+
+**Constraints**
+
+* $1 \le N \le 10^5$
+* $0 \le gas[i], cost[i] \le 10^4$
+
+---
+
+**Output Format**
+
+* Print a single integer representing the $0$-based index of the starting gas station, or `-1` if completing the circuit is impossible.
+
+---
+
+**Sample Input 0**
+
+```text
+5
+1 2 3 4 5
+3 4 5 1 2
+
+```
+
+**Sample Output 0**
+
+```text
+3
+
+```
+
+**Explanation 0**
+
+* Start at station **3** (index 3). Your tank has $0$ gas.
+* Fill $4$ units of gas. Tank = $4$.
+* Travel to station 4. Cost is $1$. Tank = $4 - 1 = 3$.
+* Fill $5$ units of gas. Tank = $3 + 5 = 8$.
+* Travel to station 0. Cost is $2$. Tank = $8 - 2 = 6$.
+* Fill $1$ unit of gas. Tank = $6 + 1 = 7$.
+* Travel to station 1. Cost is $3$. Tank = $7 - 3 = 4$.
+* Fill $2$ units of gas. Tank = $4 + 2 = 6$.
+* Travel to station 2. Cost is $4$. Tank = $6 - 4 = 2$.
+* Fill $3$ units of gas. Tank = $2 + 3 = 5$.
+* Travel to station 3. Cost is $5$. Tank = $5 - 5 = 0$.
+
+You have returned to station 3, so output **3**.

@@ -1,0 +1,60 @@
+Your solution is very close, but it contains a tiny bug that will cause it to return the wrong answer when all elements in the array are negative!
+## 🔍 The Bug Breakdown
+In your code, you initialize running_max = 0. Inside the loop, you use:
+running_max = max(p, running_max + p)
+If the array is [-5, -2, -3], here is what happens:
+
+   1. First element (-5): max(-5, 0 + -5) sets running_max = -5.
+   2. Second element (-2): max(-2, -5 + -2) evaluates to max(-2, -7). This sets running_max = -2.
+   3. Max update: max_profit = max(0, -2), which keeps max_profit = 0. This part is fine.
+
+However, Kadane's algorithm standard logic dictating max(p, running_max + p) assumes you must pick at least one element if you are tracking the max subarray. Because your running_max resets to the element p itself, it can become negative.
+If the array is instead [-2, -3, 1], on the second step running_max becomes -3. Then at 1, max(1, -3 + 1) sets running_max = 1. This also works out.
+The real logical error in this specific implementation happens if you want to allow a sum of 0 for all-negative arrays. Your code actually does output 0 for [-5, -2, -3] only because max_profit starts at 0 and never gets beaten by the negative running_max.
+But what if the problem required you to find the maximum subarray sum where you must choose at least one element (meaning an all-negative array should return the least negative number, like -2)? Your code would mistakenly return 0.
+Since this problem specifically states "If every day results in a net loss, your maximum profit is 0", your code actually passes because max_profit protects it! However, standard Kadane's is usually written by initializing running_max and max_profit to the first element of the array, or resetting running_max to 0 whenever it drops below 0.
+## 🚀 Optimized Standard Kadane's
+
+def find_profit_streak(arr):
+    max_profit = 0
+    running_max = 0
+    
+    for p in arr:
+        running_max += p
+        if running_max < 0:
+            running_max = 0  # Reset window if it becomes a liability
+        if running_max > max_profit:
+            max_profit = running_max
+            
+    return max_profit
+
+------------------------------
+## Problem 7: Flight Booking Seats
+Difficulty: Medium
+Pattern 7: Difference Array
+Problem Statement:
+There are n flights, labeled from 1 to n. You are given an array of flight bookings bookings, where bookings[i] = [first_i, last_i, seats_i] represents a booking for flights from first_i to last_i (inclusive) with seats_i seats reserved for each flight in that range.
+Return an array answer of length n, where answer[i] is the total number of seats reserved for flight i + 1.
+Example 1:
+
+* Input: bookings = [[1, 2, 10], [2, 3, 20], [2, 5, 25]], n = 5
+* Output: [10, 55, 45, 25, 25]
+* Explanation:
+* Flight 1: 10 = 10
+   * Flight 2: 10 + 20 + 25 = 55
+   * Flight 3: 20 + 25 = 45
+   * Flight 4: 25 = 25
+   * Flight 5: 25 = 25
+
+Constraints:
+
+* 1 <= n <= 2 * 10⁴
+* 1 <= bookings.length <= 2 * 10⁴
+* bookings[i].length == 3
+* 1 <= first_i <= last_i <= n
+* 1 <= seats_i <= 10⁴
+
+------------------------------
+Reply with your code/solution when you are ready, or say "next" to jump to the next pattern!
+Would you like to tackle this Difference Array problem, or skip to Pattern 8: Two Pointers — Opposite?
+

@@ -1,0 +1,88 @@
+================================================================================
+PROBLEM STATEMENT: 3SUM
+================================================================================
+
+Given an integer array `nums`, return all the unique triplets `[nums[i], nums[j], nums[k]]` 
+such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+
+Notice that the solution set must not contain duplicate triplets.
+
+--------------------------------------------------------------------------------
+FUNCTION DESCRIPTION
+--------------------------------------------------------------------------------
+
+Complete the function `threeSum`.
+
+Parameters:
+  - nums: An array of integers.
+
+Returns:
+  - A list of lists of integers, where each inner list contains three numbers 
+    that sum up to zero.
+
+--------------------------------------------------------------------------------
+INPUT / OUTPUT FORMAT
+--------------------------------------------------------------------------------
+
+Input Format:
+  - An integer array `nums`.
+
+Output Format:
+  - Return a 2D list containing all unique triplets that sum to 0.
+
+--------------------------------------------------------------------------------
+EXAMPLES
+--------------------------------------------------------------------------------
+
+Example 1:
+  Input:  nums = [-1, 0, 1, 2, -1, -4]
+  Output: [[-1, -1, 2], [-1, 0, 1]]
+  Explanation: 
+    - nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0
+    - nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0
+    - nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0
+    The distinct triplets are [-1, 0, 1] and [-1, -1, 2].
+
+Example 2:
+  Input:  nums = [0, 1, 1]
+  Output: []
+  Explanation: The only possible triplet does not sum to 0.
+
+Example 3:
+  Input:  nums = [0, 0, 0]
+  Output: [[0, 0, 0]]
+  Explanation: The only possible triplet sums to 0.
+
+--------------------------------------------------------------------------------
+CONSTRAINTS
+--------------------------------------------------------------------------------
+
+  - 3 <= nums.length <= 3000
+  - -10^5 <= nums[i] <= 10^5
+
+--------------------------------------------------------------------------------
+ALGORITHM & COMPLEXITY
+--------------------------------------------------------------------------------
+
+Approach: Sorting + Two-Pointer Technique
+  1. Sort the input array `nums`. Sorting allows using two pointers to find pairs
+     and makes skipping duplicate elements straightfoward.
+  2. Iterate through the array using index `i` from `0` to `nums.length - 3`:
+     - If `i > 0` and `nums[i] == nums[i - 1]`, skip to avoid duplicate triplets.
+     - Set two pointers: `left = i + 1` and `right = nums.length - 1`.
+     - While `left < right`:
+         - Calculate `sum = nums[i] + nums[left] + nums[right]`.
+         - If `sum == 0`:
+             - Add `[nums[i], nums[left], nums[right]]` to the result list.
+             - Advance `left` while `nums[left] == nums[left + 1]` to skip duplicates.
+             - Decrement `right` while `nums[right] == nums[right - 1]` to skip duplicates.
+             - Move both `left++` and `right--`.
+         - If `sum < 0`: Increment `left` to increase the total sum.
+         - If `sum > 0`: Decrement `right` to decrease the total sum.
+
+Complexity:
+  - Time Complexity:  O(N^2), where N is the length of `nums`. Sorting takes O(N log N) 
+                      and the nested two-pointer loop takes O(N^2).
+  - Space Complexity: O(1) or O(N) depending on the sorting implementation, 
+                      excluding the output space.
+================================================================================

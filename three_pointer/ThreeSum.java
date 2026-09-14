@@ -12,7 +12,7 @@ public class ThreeSum {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums); // Sort the array to use two-pointer technique
 
-        for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i < nums.length - 2; i++) { 
             if (i > 0 && nums[i] == nums[i - 1]) continue; // Skip duplicates for the first number
 
             int left = i + 1, right = nums.length - 1;

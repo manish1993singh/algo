@@ -17,7 +17,7 @@ public class Max_k_size_window {
             //remove indices outside the window
             if(!deque.isEmpty() && deque.peekFirst() < i - k + 1) deque.pollFirst();
             //remove indices with smaller value
-            while(!deque.isEmpty() && list.get(deque.peekLast()) < list.get(i)) deque.pollLast();
+            while(!deque.isEmpty() && list.get(deque.peekLast()) <= list.get(i)) deque.pollLast();
             //add current index
             deque.offerLast(i);
             //maximum is at front
