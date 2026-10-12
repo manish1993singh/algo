@@ -2,8 +2,11 @@
 # Difficulty: Medium
 # Pattern 13: Dutch National Flag (3-way partition)
 # Problem Statement:
-# You are managing an operations dashboard where incoming server logs are categorized by priority level: 0 (Low Priority), 1 (Medium Priority), and 2 (High Priority). You receive an array logs containing these values in an unsorted order.
-# Sort the array in-place so that logs of the same priority are grouped together, with the priorities in ascending order (0s, then 1s, then 2s).
+# You are managing an operations dashboard where incoming server logs are categorized by 
+# priority level: 0 (Low Priority), 1 (Medium Priority), and 2 (High Priority). 
+# You receive an array logs containing these values in an unsorted order.
+# Sort the array in-place so that logs of the same priority are grouped together, 
+# with the priorities in ascending order (0s, then 1s, then 2s).
 # You must solve this problem without using your language's built-in sort function and using only $O(1)$ extra space in a single pass.
 # Example 1:
 

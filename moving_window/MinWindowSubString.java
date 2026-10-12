@@ -82,12 +82,14 @@ public class MinWindowSubString {
     }
 
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the string s:");
-        String s = sc.nextLine();
-        System.out.println("Enter the string t:");
-        String t = sc.nextLine();
-        sc.close();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.println("Enter the string s:");
+        // String s = sc.nextLine();
+        // System.out.println("Enter the string t:");
+        // String t = sc.nextLine();
+        // sc.close();
+        String s = "adobecodebanc";
+        String t = "abc";
         String result = minWindow(s, t);
         System.out.println("Minimum window substring: " + result);
     }

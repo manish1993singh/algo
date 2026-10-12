@@ -24,3 +24,14 @@ def can_jump(arr):
         curr = nxt_curr
 
 print(can_jump([2,0,0,1,4]))
+
+def can_jump_2(arr: list[int]) ->bool:
+    max_j = 0
+    size = len(arr)
+    for i, j in enumerate(arr):
+        if  i > max_j:
+            return False
+        max_j = max(max_j, i+j)
+    return True
+
+print(can_jump_2([1,1,0,1]))

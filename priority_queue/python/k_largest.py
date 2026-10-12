@@ -9,8 +9,10 @@ def get_most_freq(k, nums):
     from collections import Counter
     counts = Counter(nums)
     print(counts)
+    print(counts.keys())
+    print(counts.values())
     # return counts.most_common(k)[-1][0]
     return heapq.nlargest(k, counts.keys(), key=counts.get)[-1]
 
-print(get_most_freq(3,[1,2,2,3,3,3]))
+print(get_most_freq(3,[1,2,2,3,3,3,3]))
 
